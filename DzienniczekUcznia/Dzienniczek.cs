@@ -7,7 +7,7 @@ namespace DzienniczekUcznia
     class Dzienniczek
     {
         //Stan (zmienne - POLA)
-        List<float> oceny;
+        List<float> oceny = new List<float>();
 
         //Zachowania
         /// <summary>
@@ -53,6 +53,27 @@ namespace DzienniczekUcznia
         public float NajnizszaOcena()
         {
             return oceny.Min();
+        }
+
+        /// <summary>
+        /// Wypisuje oceny na ekranie
+        /// </summary>
+        public void WypiszOceny()
+        {
+            foreach (var ocena in oceny)
+            {
+                Console.Write(ocena + "; ");
+            }
+            Console.WriteLine("");
+        }
+
+        /// <summary>
+        /// Zwraca liczbę ocen w dzienniczku
+        /// </summary>
+        /// <returns></returns>
+        public int LiczbaOcen()
+        {
+            return oceny.Count();
         }
     }
 }
